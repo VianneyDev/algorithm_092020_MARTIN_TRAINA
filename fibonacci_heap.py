@@ -71,7 +71,7 @@ class FibonacciHeap(Heap):
         """
         Retourne la valeur minimum dans l'arbre
         """
-        return min(tree.nodes[0] for tree in self.nodes)
+        return self.min_node
 
     def delete_min(self) -> int:
         """
