@@ -87,7 +87,6 @@ class FibonacciHeap(Heap):
 
 
 new_heap = FibonacciHeap()
-
 data = [10, 12, 14, 52, 54, 101, 152, 4, 7, 17]
 
 # data = [[10, [17]], [12], [14], [52], [101], [152], [4], [7]]
@@ -97,9 +96,15 @@ for value in data:
     new_heap.insert(value)
 
 
-print (new_heap)
-print (new_heap.find_min())
+print("La liste est donc :")
+print(new_heap.nodes)
+print ("Le minimum est :")
+print(new_heap.find_min())
 
-new_heap.insert(1)
-print (new_heap)
-print (new_heap.find_min())
+new_heap.insert(3)
+print ("Valeur insérée est 3")
+
+print ("La nouvelle liste est donc :")
+print(new_heap.nodes)
+print("Le nouveau minimum est donc :")
+print(new_heap.find_min())
