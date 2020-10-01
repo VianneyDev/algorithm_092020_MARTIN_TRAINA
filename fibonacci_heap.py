@@ -53,6 +53,7 @@ class FibonacciHeap(Heap):
     def __init__(self):
         self.nodes = []
         self.count = 0
+        self.min_node = None
 
     def insert(self, value: int) -> None:
         """
@@ -60,6 +61,8 @@ class FibonacciHeap(Heap):
         """
         new_tree = Tree()
         new_tree.add_value(value)
+        if self.min_node is None or self.min_node > value:
+            self.min_node = value
         self.nodes.append(new_tree)
         self.count = self.count + 1
 
@@ -84,6 +87,7 @@ class FibonacciHeap(Heap):
 
 
 new_heap = FibonacciHeap()
+
 data = [10, 12, 14, 52, 54, 101, 152, 4, 7, 17]
 
 # data = [[10, [17]], [12], [14], [52], [101], [152], [4], [7]]
@@ -92,5 +96,10 @@ data = [10, 12, 14, 52, 54, 101, 152, 4, 7, 17]
 for value in data:
     new_heap.insert(value)
 
-print(new_heap.nodes)
-print(new_heap.find_min())
+
+print (new_heap)
+print (new_heap.find_min())
+
+new_heap.insert(1)
+print (new_heap)
+print (new_heap.find_min())
